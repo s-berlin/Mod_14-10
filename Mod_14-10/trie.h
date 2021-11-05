@@ -6,13 +6,13 @@ using namespace std;
 
 const int ALPHABET_SIZE = 26;
 
-// Структура узла дерева
+// РЎС‚СЂСѓРєС‚СѓСЂР° СѓР·Р»Р° РґРµСЂРµРІР°
 struct TrieNode
 {
     string word;
     int path;
     struct TrieNode* children[ALPHABET_SIZE];
-    // isEndOfWord - true, если ключ является концом слова
+    // isEndOfWord - true, ГҐГ±Г«ГЁ ГЄГ«ГѕГ· ГїГўГ«ГїГҐГІГ±Гї ГЄГ®Г­Г¶Г®Г¬ Г±Г«Г®ГўГ 
     bool isEndOfWord;
     TrieNode()
     {
@@ -31,23 +31,23 @@ public:
     TrieNode* root;
     TrieTree();
     ~TrieTree();
-    // Добавление слова в словарь
+    // Г„Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ Г±Г«Г®ГўГ  Гў Г±Г«Г®ГўГ Г°Гј
     void insert(string str);
-    // Поиск слов с префиксом str в словаре
+    // ГЏГ®ГЁГ±ГЄ Г±Г«Г®Гў Г± ГЇГ°ГҐГґГЁГЄГ±Г®Г¬ str Гў Г±Г«Г®ГўГ Г°ГҐ
     int search(TrieNode* root, string str);
     // 
     void destory(TrieNode* root);
-    // Распечатываем все узлы в дереве
+    // ГђГ Г±ГЇГҐГ·Г ГІГ»ГўГ ГҐГ¬ ГўГ±ГҐ ГіГ§Г«Г» Гў Г¤ГҐГ°ГҐГўГҐ
     void printAll();
-    // Вывести слова с префиксом str
+    // Г‚Г»ГўГҐГ±ГІГЁ Г±Г«Г®ГўГ  Г± ГЇГ°ГҐГґГЁГЄГ±Г®Г¬ str
     void printPre(string str);
-    // Вывести нумерованный список слов с префиксом str
+    // Г‚Г»ГўГҐГ±ГІГЁ Г­ГіГ¬ГҐГ°Г®ГўГ Г­Г­Г»Г© Г±ГЇГЁГ±Г®ГЄ Г±Г«Г®Гў Г± ГЇГ°ГҐГґГЁГЄГ±Г®Г¬ str
     void SelectWord(string str);
-    // Выводим все слова с корнем в лексикографическом порядке
+    // Г‚Г»ГўГ®Г¤ГЁГ¬ ГўГ±ГҐ Г±Г«Г®ГўГ  Г± ГЄГ®Г°Г­ГҐГ¬ Гў Г«ГҐГЄГ±ГЁГЄГ®ГЈГ°Г ГґГЁГ·ГҐГ±ГЄГ®Г¬ ГЇГ®Г°ГїГ¤ГЄГҐ
     void Print(TrieNode* root);
-    // Выбор слова
+    // Г‚Г»ГЎГ®Г° Г±Г«Г®ГўГ 
     void Select(TrieNode* root);
-    // Удаление слова
+    // Г“Г¤Г Г«ГҐГ­ГЁГҐ Г±Г«Г®ГўГ 
     TrieNode* remove(TrieNode* root, string str, int debth);
 };
 
