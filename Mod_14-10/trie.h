@@ -12,7 +12,7 @@ struct TrieNode
     string word;
     int path;
     struct TrieNode* children[ALPHABET_SIZE];
-    // isEndOfWord - true, åñëè êëþ÷ ÿâëÿåòñÿ êîíöîì ñëîâà
+    // isEndOfWord - true, если ключ является концом слова
     bool isEndOfWord;
     TrieNode()
     {
@@ -31,23 +31,23 @@ public:
     TrieNode* root;
     TrieTree();
     ~TrieTree();
-    // Äîáàâëåíèå ñëîâà â ñëîâàðü
+    // Добавление слова в словарь
     void insert(string str);
-    // Ïîèñê ñëîâ ñ ïðåôèêñîì str â ñëîâàðå
+    // Поиск слов с префиксом str в словаре
     int search(TrieNode* root, string str);
-    // 
+    // Освобождение памяти
     void destory(TrieNode* root);
-    // Ðàñïå÷àòûâàåì âñå óçëû â äåðåâå
+    // Распечатываем все узлы в дереве
     void printAll();
-    // Âûâåñòè ñëîâà ñ ïðåôèêñîì str
+    // Вывести слова с префиксом str
     void printPre(string str);
-    // Âûâåñòè íóìåðîâàííûé ñïèñîê ñëîâ ñ ïðåôèêñîì str
+    // Вывести нумерованный список слов с префиксом str
     void SelectWord(string str);
-    // Âûâîäèì âñå ñëîâà ñ êîðíåì â ëåêñèêîãðàôè÷åñêîì ïîðÿäêå
+    // Выводим все слова с корнем в лексикографическом порядке
     void Print(TrieNode* root);
-    // Âûáîð ñëîâà
+    // Выбор слова
     void Select(TrieNode* root);
-    // Óäàëåíèå ñëîâà
+    // Удаление слова
     TrieNode* remove(TrieNode* root, string str, int debth);
 };
 
